@@ -5,7 +5,11 @@ class Controller:
          
     def run(self, measured_output):
          #actuation value is Kp*(theta_set - enc2.read() value
-         actuation = self.kp*(self.set_point - measured_output)
+         err = self.set_point - measured_output
+         actuation = self.kp*err
+         print("error is")
+         print(self.set_point)
+         print(measured_output)
          return actuation
         
     def set_setpoint(self, desired_set_point):
