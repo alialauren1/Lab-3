@@ -6,8 +6,8 @@ class Controller:
          self.kp = float(kp)
          self.set_point = float(set_point)
          self.measured_output = 0
-         self.time_value = cqueue.IntQueue(20)
-         self.position = cqueue.IntQueue(20)
+         self.time_value = cqueue.IntQueue(2000)
+         self.position = cqueue.IntQueue(2000)
          self.start = utime.ticks_ms()
          
 
@@ -24,9 +24,9 @@ class Controller:
              time_passed = utime.ticks_diff(current_time, self.start)
              self.time_value.put(time_passed)
              self.position.put(measured_output)
+             return actuation
          else:
-             return 
-         return actuation
+             return "done"
         
     def set_setpoint(self, desired_set_point):
         self.set_point = desired_set_point
