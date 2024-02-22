@@ -12,33 +12,22 @@ enc2.zero()
 
 
 Kp = .1 #float(input("Enter the proportional gain (Kp) =  "))
-setpoint = 5000 #int(input("Enter the set-point =  "))
+setpoint = 50000 #int(input("Enter the set-point =  "))
 controller_obj = Controller(Kp, setpoint)
-# continues to read encoder values for testing until "Ctrl-C" is pressed
     
 while True:
-    try:
-        # run motor and read encoder vals
-        # init motor time channels init-ed in motor_driver class
-        
+    try:        
         while True:
-            print("--------------------------------------------")
             reader_value = enc2.read()
-            print("reader value")
-            print(reader_value)
-            print("----------")
             PWM = controller_obj.run(reader_value)
-            print("--------------------")
-            print("PWM is")
-            print(PWM)
-            print("--------------------")
-#             if isinstance(PWM, str):
-#                 print("done")
-#                 break
-            #else:
-            moe.set_duty_cycle(-PWM)
-        break     
-
+            if isinstance(PWM, str):
+                print("done")
+                break
+            else:
+                moe.set_duty_cycle(-PWM)
+       # print("data")
+       # print(controller_obj.data())
+            
     # Trying to catch the "Ctrl-C" keystroke to break out
     # of the program cleanly
     except KeyboardInterrupt:
