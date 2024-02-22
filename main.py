@@ -11,8 +11,8 @@ enc2.zero()
 
 
 
-Kp = .5 #float(input("Enter the proportional gain (Kp) =  "))
-setpoint = 6000 #int(input("Enter the set-point =  "))
+Kp = .1 #float(input("Enter the proportional gain (Kp) =  "))
+setpoint = 60000 #int(input("Enter the set-point =  "))
 controller_obj = Controller(Kp, setpoint)
 # continues to read encoder values for testing until "Ctrl-C" is pressed
     
@@ -27,8 +27,8 @@ while True:
             print(reader_value)
             print("----------")
             PWM = controller_obj.run(reader_value)
-            actuate_motor = moe.set_duty_cycle(PWM)
-            utime.sleep_ms(10)
+            actuate_motor = moe.set_duty_cycle(-PWM)
+            #utime.sleep_ms(10)
             
 
 

@@ -1,10 +1,14 @@
+import utime
+import cqueue
+
 class Controller:
     def __init__(self, kp, set_point):
          self.kp = float(kp)
          self.set_point = float(set_point)
          self.measured_output = 0
-         Time = []
-         position = []
+         self.time_value = cqueue.IntQueue(20)
+         self.position = cqueue.IntQueue(20)
+         self.start = utime.ticks_ms()
          
 
     def run(self, measured_output):
@@ -15,7 +19,13 @@ class Controller:
          print(err)
          
          
-         
+         current_time = utime.ticks_ms()
+         if not self.time_value.full():
+             time_passed = utime.ticks_diff(current_time, self.start)
+             self.time_value.put(time_passed)
+             self.position.put(measured_output)
+         else:
+             return 
          return actuation
         
     def set_setpoint(self, desired_set_point):
@@ -24,4 +34,10 @@ class Controller:
     def set_Kp(self, desired_Kp):
         self.kp = desired_Kp
         
+    def data():
+        x = self.time_value.put(time_passed)
+        y = self.position.put(measured_output)
+        return x , y
+        
+    
     
