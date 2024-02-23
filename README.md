@@ -34,4 +34,6 @@
     exessive oscillation ( with a high KP value), and finally our best
     preformance we have achived for our motor.
 
-    
+
+![image](https://github.com/alialauren1/Lab-3/assets/157066050/c7b5fdc4-4317-47af-89b1-9c502eeae2c0)
+
