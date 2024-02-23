@@ -37,10 +37,13 @@
 
 
 ![image](https://github.com/alialauren1/Lab-3/assets/157066050/c7b5fdc4-4317-47af-89b1-9c502eeae2c0)
-In this figure we can see three plots. For our first plot (too high, blue color), we used a KP
-value of .11 resulting in the higest KP we used for this lab. For the second plot of this figure
-(too low, orange color) we used a KP value of 0.005. Giving us the lowest value of this plot.
-Showing us that at this KP our motor preforming how we expect it too but it is not preforming at
-its optimal accuracy. For the third plot (best, green color) we see that it is in between your other
-plots. Where we are not seeing an overdamping effect but are also are preforming better then our 
-lower KP value of 0.005. This KP value is at 0.015.
+In the figure above three plots are plotted, each representing the performance of a motor under
+different proportional gain (KP) values. The first plot, shown in blue, corresponds to a KP value
+of 0.11. Which is the highest KP utilized in the lab. This plot illustrates that the motor's performance
+is too high, implying that the proportional gain might be excessive, potentially leading to overshooting. 
+The second plot, depicted in orange, corresponds to a KP value of 0.005, the lowest value tested. While
+the motor operates as expected at this KP. It does not achieve optimal accuracy. Lastly, the third plot,
+in green, corresponds to a KP value of 0.015, which falls between the extremes of the other two plots.
+Here, the motor's performance is neither overdamped or underdamped, indicating the optimal KP vallue
+for the motor's performance, providing the most amount of accuracy.
+
