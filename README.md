@@ -35,5 +35,12 @@
     preformance we have achived for our motor.
 
 
-![image](https://github.com/alialauren1/Lab-3/assets/157066050/c7b5fdc4-4317-47af-89b1-9c502eeae2c0)
 
+![image](https://github.com/alialauren1/Lab-3/assets/157066050/c7b5fdc4-4317-47af-89b1-9c502eeae2c0)
+In this figure we can see three plots. For our first plot (too high, blue color), we used a KP
+value of .11 resulting in the higest KP we used for this lab. For the second plot of this figure
+(too low, orange color) we used a KP value of 0.005. Giving us the lowest value of this plot.
+Showing us that at this KP our motor preforming how we expect it too but it is not preforming at
+its optimal accuracy. For the third plot (best, green color) we see that it is in between your other
+plots. Where we are not seeing an overdamping effect but are also are preforming better then our 
+lower KP value of 0.005. This KP value is at 0.015.
